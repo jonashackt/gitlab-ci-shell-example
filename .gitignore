@@ -1,4 +1,5 @@
 *.class
+*.springBeans
 
 # Package Files #
 *.jar

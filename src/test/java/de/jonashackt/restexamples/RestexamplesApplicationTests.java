@@ -11,14 +11,18 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.WebIntegrationTest;
 import org.apache.http.HttpStatus;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
 
 import de.jonashackt.restexamples.controller.Controller;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = RestexamplesApplication.class)
-@WebIntegrationTest
+@RunWith(SpringRunner.class)
+@SpringBootTest(
+		classes = RestexamplesApplication.class,
+		webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
+)
 public class RestexamplesApplicationTests {
     
 	@Test
