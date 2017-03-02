@@ -51,10 +51,13 @@ public class RestexamplesApplicationTests {
             .assertThat()
                 .equals(Controller.RESPONSE);
     }
-	
-	@Before
-	public void setUp() {
-	    
+
+    @Test public void
+	check_if_responded_branch_name_is_correct() {
+		get("http://localhost:8080/restexamples/branchname")
+		.then()
+			.statusCode(HttpStatus.SC_OK)
+			.equals(Controller.BRANCH_RESPONSE + "master");
 	}
 
 }

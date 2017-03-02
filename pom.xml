@@ -71,6 +71,17 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>pl.project13.maven</groupId>
+				<artifactId>git-commit-id-plugin</artifactId>
+				<version>2.2.2</version>
+				<executions>
+					<execution>
+						<id>generate-git-properties-in-this-phase-already</id>
+						<phase>generate-sources</phase>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 	
