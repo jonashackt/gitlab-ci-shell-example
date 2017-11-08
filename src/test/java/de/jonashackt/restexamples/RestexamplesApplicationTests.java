@@ -1,22 +1,17 @@
 package de.jonashackt.restexamples;
 
-import static org.junit.Assert.assertEquals;
-import static com.jayway.restassured.RestAssured.*;
-import static com.jayway.restassured.matcher.RestAssuredMatchers.*;
-import static org.hamcrest.Matchers.*;
-
-import org.junit.Before;
+import de.jonashackt.restexamples.controller.Controller;
+import org.apache.http.HttpStatus;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.WebIntegrationTest;
-import org.apache.http.HttpStatus;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
 
-import de.jonashackt.restexamples.controller.Controller;
+import static com.jayway.restassured.RestAssured.get;
+import static com.jayway.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(
@@ -49,7 +44,7 @@ public class RestexamplesApplicationTests {
         .then()
             .statusCode(HttpStatus.SC_OK)
             .assertThat()
-                .equals(Controller.RESPONSE);
+				.body(is(Controller.RESPONSE));
     }
 
     @Test public void
