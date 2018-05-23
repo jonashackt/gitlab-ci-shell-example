@@ -1,24 +1,17 @@
 stages:
   - build
-  - deploy
 
+# see usage of Namespaces at https://docs.gitlab.com/ee/user/group/#namespaces
 variables:
   REGISTRY_GROUP_PROJECT: $CI_REGISTRY/root/restexamples
 
-# Siehe https://docs.gitlab.com/ee/ci/docker/using_docker_build.html#using-the-gitlab-container-registry
+# see how to login at https://docs.gitlab.com/ee/ci/docker/using_docker_build.html#using-the-gitlab-container-registry
 before_script:
   - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
 
-# Build Stages
 build-and-push:
   stage: build
   script:
     - docker build . --tag $REGISTRY_GROUP_PROJECT/restexamples:latest
     - docker push $REGISTRY_GROUP_PROJECT/restexamples:latest
-
-
-#run-restexamples:
-#  stage: deploy
-#  script:
-#    - docker run
 
