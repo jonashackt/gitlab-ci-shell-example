@@ -1,5 +1,5 @@
 stages:
-  - buildit
+  - build
   - deploy
 
 variables:
@@ -11,7 +11,7 @@ before_script:
 
 # Build Stages
 build-and-push:
-  stage: buildit
+  stage: build
   script:
     - docker build . --tag $REGISTRY_GROUP_PROJECT/restexamples:latest
     - docker push $REGISTRY_GROUP_PROJECT/restexamples:latest
