@@ -38,7 +38,7 @@ push-image:
 deploy-2-dev:
   stage: deploy
   script:
-    - echo You should use Ansible here! :))
+    - echo You should use Ansible here!
   environment:
     name: dev
     url: https://dev.jonashackt.io
