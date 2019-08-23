@@ -22,6 +22,8 @@ before_script:
 
 build-image:
   stage: build
+  tags:
+    - shell
   script:
     - docker build . --tag $REGISTRY_GROUP_PROJECT/restexamples:latest
 
