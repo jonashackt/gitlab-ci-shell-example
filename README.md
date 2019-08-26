@@ -1,7 +1,7 @@
-Example Spring Boot project for building inside GitLab CI
+Example app for building inside GitLab CI - using shell executor
 =============================
 
-### GitLab CI Docker-in-Docker example
+This GitLab CI example needs a corresponding GitLab runner configuration - see https://github.com/jonashackt/gitlab-ci-stack#configure-gitlab-runner-with-shell-executor
 
 See [.gitlab-ci.yml](.gitlab-ci.yml):
 
