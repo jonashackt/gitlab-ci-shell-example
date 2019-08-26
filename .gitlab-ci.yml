@@ -22,6 +22,7 @@ before_script:
 
 build-image:
   stage: build
+  # the tag 'shell' advices only GitLab runners using this tag to pick up that job
   tags:
     - shell
   script:
@@ -29,16 +30,22 @@ build-image:
 
 test-image:
   stage: test
+  tags:
+    - shell
   script:
     - echo Insert fancy API test here!
 
 push-image:
   stage: push
+  tags:
+    - shell
   script:
     - docker push $REGISTRY_GROUP_PROJECT/restexamples:latest
 
 deploy-2-dev:
   stage: deploy
+  tags:
+    - shell
   script:
     - echo You should use Ansible here!
   environment:
