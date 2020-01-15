@@ -3,8 +3,8 @@
 # 1. Building the App with Maven
 FROM maven:3-jdk-11
 
-ADD . /gitlab-ci-shell-example
-WORKDIR /gitlab-ci-shell-example
+ADD . /build
+WORKDIR /build
 
 # Just echo so we can see, if everything is there :)
 RUN ls -l
